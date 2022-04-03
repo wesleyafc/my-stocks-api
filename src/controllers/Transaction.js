@@ -4,14 +4,14 @@ const Transaction = require('../models/NewTransaction')
 module.exports.createNewTransaction = async function (req, res) {
     const { description,
         actionsName,
-        quotasAcmount,
+        quotasAmmount,
         singleQuotaValue,
         totalValue
     } = req.body
     const transaction = new Transaction({
         description,
         actionsName,
-        quotasAcmount,
+        quotasAmmount,
         singleQuotaValue,
         totalValue
     })
@@ -53,7 +53,7 @@ module.exports.updateTransaction = async function (req, res) {
 
         const { description,
             actionsName,
-            quotasAcmount,
+            quotasAmmount,
             singleQuotaValue,
             totalValue,
         } = req.body
@@ -63,7 +63,7 @@ module.exports.updateTransaction = async function (req, res) {
 
         updatedTransaction.description = description
         updatedTransaction.actionsName = actionsName
-        updatedTransaction.quotasAcmount = quotasAcmount
+        updatedTransaction.quotasAmmount = quotasAmmount
         updatedTransaction.singleQuotaValue = singleQuotaValue
         updatedTransaction.totalValue = totalValue
 

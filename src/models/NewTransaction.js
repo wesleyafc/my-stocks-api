@@ -8,7 +8,7 @@ const TransactionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    quotasAcmount: {
+    quotasAmmount: {
         type: Number,
         required: true,
     },

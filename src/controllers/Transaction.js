@@ -2,18 +2,15 @@ const Transaction = require('../models/NewTransaction')
 
 //create new transaction
 module.exports.createNewTransaction = async function (req, res) {
-    const { description,
+    const {
         actionsName,
         quotasAmmount,
         singleQuotaValue,
-        totalValue
     } = req.body
     const transaction = new Transaction({
-        description,
         actionsName,
         quotasAmmount,
         singleQuotaValue,
-        totalValue
     })
     await transaction.save()
         .then(() => {
@@ -51,21 +48,17 @@ module.exports.updateTransaction = async function (req, res) {
     try {
         const _id = req.params.id
 
-        const { description,
+        const {
             actionsName,
             quotasAmmount,
             singleQuotaValue,
-            totalValue,
         } = req.body
 
         const updatedTransaction = await Transaction.findOne({ _id })
 
-
-        updatedTransaction.description = description
         updatedTransaction.actionsName = actionsName
         updatedTransaction.quotasAmmount = quotasAmmount
         updatedTransaction.singleQuotaValue = singleQuotaValue
-        updatedTransaction.totalValue = totalValue
 
         await updatedTransaction.save()
             .then(() => {

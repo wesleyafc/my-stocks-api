@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 
 const TransactionSchema = new mongoose.Schema({
-    description: {
-        type: String,
-    },
     actionsName: {
         type: String,
         required: true,
@@ -16,9 +13,10 @@ const TransactionSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    totalValue: {
-        type: Number,
-    },
+    username: {
+        type: String,
+        required: true,
+    }
 }, { timestamps: true })
 
 module.exports = mongoose.model('Transaction', TransactionSchema)

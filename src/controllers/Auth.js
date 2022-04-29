@@ -5,7 +5,7 @@ module.exports.createNewAccount = async function (req, res) {
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
 
-    //create new user account
+    //create new user account 
     const NewAccount = new User({
         username: req.body.username,
         email: req.body.email,

@@ -4,6 +4,7 @@ const DepositController = require('../controllers/Deposit');
 const IndexController = require('../controllers/Index')
 const TransactionController = require('../controllers/Transaction')
 const AuthController = require('../controllers/Auth')
+const UserController = require('../controllers/User')
 
 //home page
 router.get('/', IndexController.index);
@@ -41,5 +42,11 @@ router.get('/transaction/:id', TransactionController.singleTransaction)
 router.put('/transaction/:id', TransactionController.updateTransaction)
 
 router.delete('/transaction/:id', TransactionController.deleteTransaction)
+
+
+
+router.put("/:id", UserController.updateUser)
+router.delete("/:id", UserController.deleteUser)
+router.get("/:id", UserController.showUser)
 
 module.exports = router

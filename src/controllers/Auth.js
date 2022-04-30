@@ -1,4 +1,4 @@
-const User = require('../models/CreateNewAccount')
+const User = require('../models/Account')
 const bcrypt = require('bcrypt')
 
 module.exports.createNewAccount = async function (req, res) {

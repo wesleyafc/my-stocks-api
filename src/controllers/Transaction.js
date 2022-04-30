@@ -6,11 +6,13 @@ module.exports.createNewTransaction = async function (req, res) {
         actionsName,
         quotasAmmount,
         singleQuotaValue,
+        username,
     } = req.body
     const transaction = new Transaction({
         actionsName,
         quotasAmmount,
         singleQuotaValue,
+        username,
     })
     await transaction.save()
         .then(() => {
